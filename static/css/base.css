@@ -1,0 +1,20 @@
+body{
+    font-size: 18px;
+}
+
+head h1 a {
+    color: red;
+    text-decoration: none;
+}
+
+.detalle-entry{
+    margin-bottom: 2rem;
+}
+.detalle-entry h2 a,
+.detalle-entry h2 a:visited{
+    color: slateblue;
+    
+}
+.detalle-entry h2 a:hover{
+    color: red;
+}

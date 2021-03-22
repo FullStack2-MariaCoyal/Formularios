@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div class="detalle-entry">
+    <h2> {{ Blogs.titulo }} </h2>
+    <p> {{ Blogs.Resumen }} </p>
+</div>
+
+<a href="{% url 'notaEditar' Blogs.pk %}"> Editar Nota</a> 
+<br>
+<a href="{% url 'notaEliminar' Blogs.pk %}">Eliminar Nota</a>
+{% endblock content %}

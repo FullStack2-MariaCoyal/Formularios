@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block content %} 
+    {% for noticias in Blogs %}
+        <div class="detalle-entry">
+            <h2> <a href="{% url 'detalleDetalle' noticias.pk %}"> {{ noticias.titulo}} </a> </h2>
+                            <p> {{noticias.Resumen}}</p>
+            
+        </div>
+    {% endfor %} 
+
+{% endblock content %} 
+
