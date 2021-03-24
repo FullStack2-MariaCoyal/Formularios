@@ -15,8 +15,12 @@
 
 <body>
     <div>
-        {% block content %} {% endblock content %}
-
+        { % if user.is_authenticated % }
+        <p>Bienvenido {{user.username}}!</p>
+        <p><a href="{% url 'logout' %}">LogOut</a></p>
+        {% else %}
+        <p>Inicie sesión</p>
+        <a href="{ % url 'login' % }">Login in</a> { % endif % } { % block content % } { % endblock content % }
     </div>
 </body>
 
