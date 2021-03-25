@@ -10,17 +10,20 @@
 
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <h1> <a href="{% url 'home' %}">Django noticias</a> </h1>
+    {% if user.is_authenticated %}
+    <p>Bienvenido {{user.username}}!</p>
+    <p><a href="{% url 'logout' %}">LogOut</a></p>
+    {% else %}
+    <p>Inicie sesión</p>
+    <a href="{% url 'login' %}">Login in</a>
+    <a href="{% url 'registrar' %}">Registrar</a> {% endif %}
+
     <h2><a href="{% url 'notaNueva' %}">Nota nueva</a></h2>
 </head>
 
 <body>
     <div>
-        { % if user.is_authenticated % }
-        <p>Bienvenido {{user.username}}!</p>
-        <p><a href="{% url 'logout' %}">LogOut</a></p>
-        {% else %}
-        <p>Inicie sesión</p>
-        <a href="{ % url 'login' % }">Login in</a> { % endif % } { % block content % } { % endblock content % }
+        {% block content %} {% endblock content %}
     </div>
 </body>
 
